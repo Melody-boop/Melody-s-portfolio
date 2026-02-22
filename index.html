@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Melody Mwayitsi — Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#6C63FF;
+      --accent-2:#00C2A8;
+      --bg-dark:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      --max-width:1100px;
+    }
+
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:
+        linear-gradient(180deg, rgba(12,18,30,0.6), rgba(6,10,18,0.8)),
+        url('https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b2f3b7b3b6b6f8b6f8b6f8b6f8b6f8b') center/cover no-repeat;
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+      gap:24px;
+    }
+
+    .container{
+      width:100%;
+      max-width:var(--max-width);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:14px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      overflow:hidden;
+      backdrop-filter: blur(6px) saturate(120%);
+      border: 1px solid rgba(255,255,255,0.04);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:28px 36px;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+
+    .logo{
+      width:64px;height:64px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;color:white;font-family:'Merriweather',serif;
+      box-shadow: 0 6px 18px rgba(108,99,255,0.18);
+    }
+
+    .brand h1{
+      font-family:'Merriweather',serif;
+      font-size:20px;
+      letter-spacing:0.6px;
+      color:#fff;
+    }
+    .brand p{font-size:12px;color:var(--muted);margin-top:2px}
+
+    nav a{
+      color:rgba(230,238,246,0.9);
+      text-decoration:none;margin-left:18px;font-weight:600;font-size:14px;
+    }
+    nav a:hover{color:var(--accent)}
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:28px;
+      padding:0 36px 36px 36px;
+    }
+
+    /* Left column */
+    .left{
+      padding:18px 0;
+    }
+
+    .hero{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:12px;padding:28px;
+      display:flex;gap:20px;align-items:center;
+      box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    .avatar{
+      width:110px;height:110px;border-radius:14px;
+      background:linear-gradient(135deg,var(--accent-2),var(--accent));
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Merriweather',serif;font-weight:700;font-size:28px;color:white;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+      flex-shrink:0;
+    }
+
+    .hero h2{font-size:22px;margin-bottom:6px}
+    .hero p{color:var(--muted);font-size:14px;margin-bottom:8px}
+
+    .cta{
+      margin-top:12px;display:flex;gap:12px;flex-wrap:wrap;
+    }
+    .btn{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;padding:10px 14px;border-radius:10px;border:none;
+      font-weight:600;cursor:pointer;box-shadow:0 8px 20px rgba(108,99,255,0.18);
+      transition:transform .18s ease, box-shadow .18s ease;
+      text-decoration:none;
+      display:inline-flex;align-items:center;gap:8px;
+    }
+    .btn.secondary{
+      background:transparent;border:1px solid rgba(255,255,255,0.06);color:#dbe9f7;
+      box-shadow:none;
+    }
+    .btn:hover{transform:translateY(-4px)}
+
+    /* About card */
+    .card{
+      margin-top:20px;background:var(--card);padding:20px;border-radius:12px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+    .card h3{font-family:'Merriweather',serif;margin-bottom:10px}
+    .card p{color:var(--muted);line-height:1.6;font-size:14px}
+
+    /* Skills grid */
+    .skills{
+      display:flex;flex-wrap:wrap;gap:10px;margin-top:12px;
+    }
+    .skill{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:8px 12px;border-radius:10px;font-weight:600;font-size:13px;color:#eaf3ff;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Right column */
+    .right{
+      padding:18px 0;
+      position:relative;
+    }
+    .contact-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:20px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+    }
+    .contact-item{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+    .contact-item strong{min-width:80px;color:#dbe9f7;font-size:13px}
+    .contact-item a{color:var(--accent);text-decoration:none;font-weight:600}
+
+    /* Projects list */
+    .projects{margin-top:18px;display:flex;flex-direction:column;gap:12px}
+    .project{
+      background:var(--glass);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
+      display:flex;justify-content:space-between;align-items:center;gap:12px;
+    }
+    .project h4{font-size:15px;margin-bottom:6px}
+    .project p{color:var(--muted);font-size:13px}
+
+    /* Footer */
+    footer{
+      padding:18px 36px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.01));
+      border-top:1px solid rgba(255,255,255,0.02);
+      display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width:980px){
+      main{grid-template-columns:1fr; padding:0 20px 28px 20px}
+      .right{order:2}
+      .left{order:1}
+    }
+
+    /* small animations */
+    .fade-in{animation:fadeIn .9s ease both}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="container fade-in" role="main" aria-label="Melody Mwayitsi portfolio">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">MM</div>
+        <div>
+          <h1>MELODY MWAYITSI</h1>
+          <p>BSc Computer Science • Cloud Enthusiast</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="left" aria-labelledby="about">
+        <!-- Hero -->
+        <div class="hero" id="about">
+          <div class="avatar" aria-hidden="true">MM</div>
+          <div>
+            <h2>Hi — I'm Melody Mwayitsi</h2>
+            <p><strong>Bachelor of Science in Computer Science</strong> with strong foundations in data structures, OOP, and cloud basics. I build reliable code, explore cloud solutions, and collaborate using Git &amp; GitHub.</p>
+
+            <div class="cta">
+              <a class="btn" href="#contact">Get in touch</a>
+              <a class="btn secondary" href="https://github.com/Melody-boop" target="_blank" rel="noopener">View GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- About card -->
+        <div class="card" style="margin-top:18px">
+          <h3>About</h3>
+          <p>
+            I am pursuing a <strong>Bachelor of Science in Computer Science</strong>. I enjoy solving problems with code and learning cloud technologies. I focus on writing clean, maintainable programs and building simple web experiences.
+          </p>
+
+          <h3 style="margin-top:14px">Concepts I work with</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <div class="skill">Data Structures</div>
+            <div class="skill">Object Oriented Programming</div>
+            <div class="skill">Cloud Basics</div>
+            <div class="skill">Version Control (Git)</div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="card" style="margin-top:18px">
+          <h3 id="projects">Selected Projects</h3>
+          <div class="projects">
+            <div class="project">
+              <div>
+                <h4>Portfolio Website</h4>
+                <p>Responsive personal site built with HTML, CSS, and JavaScript.</p>
+              </div>
+              <div style="text-align:right">
+                <a class="btn secondary" href="https://github.com/Melody-boop" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div>
+                <h4>Data Structures Exercises</h4>
+                <p>Implementations and practice problems in Java and Python.</p>
+              </div>
+              <div style="text-align:right">
+                <a class="btn secondary" href="https://github.com/Melody-boop" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+
+            <div class="project">
+              <div>
+                <h4>Cloud Basics Demo</h4>
+                <p>Small cloud-focused demo and notes exploring basic cloud services.</p>
+              </div>
+              <div style="text-align:right">
+                <a class="btn secondary" href="https://github.com/Melody-boop" target="_blank" rel="noopener">Source</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right" aria-labelledby="contact">
+        <div class="contact-card" id="contact">
+          <h3>Contact</h3>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:mwayitsimelody@gmail.com">mwayitsimelody@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Phone</strong>
+            <a href="tel:+254757321968">+254 757 321 968</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Course</strong>
+            <span style="color:var(--muted)">Bachelors of Science in Computer Science</span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Tools</strong>
+            <span style="color:var(--muted)">Git &amp; GitHub; VS Code</span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Interests</strong>
+            <span style="color:var(--muted)">Cloud Computing; Project Work</span>
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:10px">
+            <a class="btn" href="https://github.com/Melody-boop" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn secondary" href="https://www.linkedin.com/in/melody-mwayitsi-901100317/" target="linkedIn" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3 id="skills">Skills</h3>
+          <div class="skills" style="margin-top:10px">
+            <div class="skill">Java</div>
+            <div class="skill">Python</div>
+            <div class="skill">C Programming</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Simple Web Development</div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Concepts &amp; Tools</h3>
+          <p style="color:var(--muted);font-size:14px">
+            <strong>Concepts:</strong> Data Structures; OOP; Cloud Basics<br>
+            <strong>Tools:</strong> Git; GitHub; VS Code
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>@Melody 2026</div>
+      <div style="color:var(--muted)">Designed with care • <a href="mailto:mwayitsimelody@gmail.com" style="color:var(--accent);text-decoration:none">mwayitsimelody@gmail.com</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Small interactive touches
+    document.addEventListener('DOMContentLoaded', function(){
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+        });
+      });
+
+      // Simple reveal animation for project cards
+      const projects = document.querySelectorAll('.project');
+      projects.forEach((p,i)=>{
+        p.style.opacity = 0;
+        setTimeout(()=>{ p.style.transition = 'opacity .6s ease, transform .6s ease'; p.style.opacity = 1; p.style.transform = 'translateY(0)'; }, 200 + i*120);
+      });
+    });
+  </script>
+</body>
+</html>
