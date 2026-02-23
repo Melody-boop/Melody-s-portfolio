@@ -2,7 +2,7 @@
 
 A professional portfolio showcasing my skills and projects as a Software Developer with a strong interest in Cloud Computing.
 
-🔗 *Live Website:* https://github.com/Melody-boop/Melody-s-portfolio/
+🔗 *Live Website:* https://melody-boop.github.io/Melody-s-portfolio/
 
 ---
 
