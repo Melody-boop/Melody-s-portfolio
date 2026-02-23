@@ -82,7 +82,7 @@ You can explore the portfolio website here:
 
 ## 👨‍💻 Author
 
-*Your Name*  
+MELODY TECHIE 
 Aspiring Software Developer | Cloud Computing Enthusiast  
 
 GitHub: https://github.com/melody-boop  
