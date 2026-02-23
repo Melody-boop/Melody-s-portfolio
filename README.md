@@ -1,4 +1,4 @@
-[14:39, 23/02/2026] Melo🥰: # 🌐 Personal Portfolio Website
+ # 🌐 Personal Portfolio Website
 
 A professional portfolio showcasing my skills and projects as a Software Developer with a strong interest in Cloud Computing.
 
@@ -30,7 +30,12 @@ It demonstrates *version control best practices, **deployment workflows*, and a 
 *Frontend:*  
 - HTML5  
 - CSS3  
-- JavaScript  
+- JavaScript
+  *Backend*
+  -Java
+  -Python
+  -c#
+  -c
 
 *Tools & Platforms:*  
 - Git  
@@ -53,12 +58,12 @@ This project demonstrates:
 ## 🔗 Live Demo
 
 You can explore the portfolio website here:  
-[View My Portfolio](YOUR-LIVE-LINK-HERE)
+[View My Portfolio](https://melody-boop.github.io/Melody-s-portfolio/)
 
 ---
 
 ## 📂 Project Architecture
-[14:45, 23/02/2026] Melo🥰: The structure is simple, professional, and scalable for future enhancements.
+ The structure is simple, professional, and scalable for future enhancements.
 
 ---
 
