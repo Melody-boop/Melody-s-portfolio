@@ -20,5 +20,5 @@ This website showcases my skills, projects, and professional profile as a Comput
 
 ## Live Demo
 
-[View Live Portfolio]https://melody-boop.github.io/Melody-s-portfolio/
+[View Live Portfolio](https://melody-boop.github.io/Melody-s-portfolio/)
 
